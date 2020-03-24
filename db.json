@@ -1,0 +1,6 @@
+{
+    "measure-units": [
+        {"id": 1, "unit": "100 м3", "base": "м3", "factor": 0.01},
+        {"id": 2, "unit": "штук", "base": "шт", "factor": 1}
+    ]
+}
