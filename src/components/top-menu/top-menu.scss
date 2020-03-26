@@ -1,0 +1,25 @@
+.top-menu {    
+    background-color: #d7d7d7;
+
+    .top-menu-row {
+        display: flex;
+        border-collapse: collapse;
+    
+        .menu-item {   
+            display: flex;
+            align-items: center; 
+            height: 36px;
+    
+            padding: 0 10px 0 4px;
+            border: solid 1px #000000;  
+            border-right: none; 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #333333
+        }
+
+        .menu-item:last-of-type {
+            border-right: solid 1px #000000;
+        }
+    }
+}

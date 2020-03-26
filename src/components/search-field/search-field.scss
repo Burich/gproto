@@ -1,0 +1,22 @@
+.search-field {  
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    
+    input {
+        height: 31px;
+        border-width: 1px;
+        border-style: solid;
+        width: 266px;
+        padding-left: 32px;
+        font-size: 14px;
+    }
+
+    &::before {
+        content: url('/assets/images/search.svg');
+        width: 22px;
+        position: absolute;
+        margin-left: 5px;
+    }
+}

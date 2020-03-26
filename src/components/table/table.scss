@@ -1,8 +1,22 @@
 .table-component {
     border-collapse: collapse;
 
+    thead {
+        background-color: #f2f2f2;
+    }
+
     td {
-        border: solid 1px #000000;
+        color: #333333;
+        border: solid 1px #333333;
         padding: 5px 10px;
+        height: 20px;
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    tbody {
+        tr:hover {
+            background-color: rgb(129, 211, 248);
+        }    
     }
 }
