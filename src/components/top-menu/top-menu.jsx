@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 import './top-menu.scss'
 
 const menuTree = [
-  {label: 'Генеральный план', to: '/measure-units/'},
+  {label: 'Генеральный план', to: '/master-plan/'},
   {label: 'Настройки', submenu: [
-    {label: 'Конструктивные элементы (КЭ)', to: ''},
-    {label: 'Справочники норм и расценок (УЕР)', to: ''},
-    {label: 'Виды работ СМР', to: ''},
-    {label: 'Проектные марки', to: ''},
+    {label: 'Конструктивные элементы (КЭ)', to: 'structural-elements/'},
+    {label: 'Справочники норм и расценок (УЕР)', to: 'references-and-rates'},
+    {label: 'Виды работ СМР', to: 'types-of-jobs'},
+    {label: 'Проектные марки', to: 'design-brands'},
     {label: 'Ед.изм', to: '/measure-units/'},
   ]},
   {label: 'Рабочее место методолога', submenu: [
-    {label: 'Правила связи УЕР и КЭ', to: ''},
-    {label: 'Правила связи Видов работ и КЭ', to: ''},
+    {label: 'Правила связи УЕР и КЭ', to: 'communication-rules-uer'},
+    {label: 'Правила связи Видов работ и КЭ', to: 'communication-rules-types-of-jobs'},
   ]},
-  {label: 'Ведомость объемов работ', to: ''},
-  {label: 'Технологическая последовательность работ', to: ''},
+  {label: 'Ведомость объемов работ', to: 'bill-of-quantities'},
+  {label: 'Технологическая последовательность работ', to: 'workflow'},
 ]
 
 class TopMenu extends Component {
