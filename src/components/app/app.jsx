@@ -13,6 +13,7 @@ const App = () => {
       <Switch>
         <Route path='/' exact component={MainPage} />
         <Route path='/measure-units/' component={MeasureUnitsPage} />
+        <Route path="*" render={() => <div>TODO: not found</div>} />
       </Switch>
       {
       /* <body

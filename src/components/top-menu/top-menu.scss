@@ -4,6 +4,10 @@
     .top-menu-row {
         display: flex;
         border-collapse: collapse;
+
+        a {
+            text-decoration-line: none;
+        }
     
         .menu-item {   
             display: flex;
