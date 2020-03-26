@@ -6,32 +6,7 @@ import { connect } from "react-redux";
 import { withGpApiService } from "../../hoc";
 import { fetchMeasureUnits } from "../../actions/measure-units";
 
-const MeasureUnitsTable = ({values}) => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <td>Ед.изм</td>
-          <td>Базовая ед.изм</td>
-          <td>Коэф. преобразования</td>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          values.map(value => {
-            return (
-              <tr key={value.id}>
-                <td>{value.unit}</td>
-                <td>{value.base}</td>
-                <td>{value.factor}</td>
-              </tr>
-            )
-          })
-        }
-      </tbody>
-    </table>
-  )
-}
+import Table from "../table";
 
 class MeasureUnitsTableContainer extends Component {
   componentDidMount() {
@@ -48,8 +23,14 @@ class MeasureUnitsTableContainer extends Component {
     if (loading) {
         return <div>TODO: loading indicator</div>
     }
-
-    return <MeasureUnitsTable values={values} />
+    return <Table 
+      values={values}
+      columns={[
+        {label: 'Ед.изм', property: 'unit'},
+        {label: 'Базовая ед.изм', property: 'base'},
+        {label: 'Коэф. преобразования', property: 'factor'},
+      ]}
+    />
   }
 }
 
