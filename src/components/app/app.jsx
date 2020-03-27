@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Route, Switch } from "react-router-dom";
 
-import { MainPage, MeasureUnitsPage } from "../pages";
+import { MainPage, NotFoundPage, 
+  MeasureUnitsPage, DesignBrandsPage } from "../pages";
 
 // import '@gpn-design/uikit/dist/style.css';
 // import { Button } from '@gpn-design/uikit';
@@ -13,7 +14,8 @@ const App = () => {
       <Switch>
         <Route path='/' exact component={MainPage} />
         <Route path='/measure-units/' component={MeasureUnitsPage} />
-        <Route path="*" render={() => <div>TODO: not found</div>} />
+        <Route path='/design-brands/' component={DesignBrandsPage} />
+        <Route path="*" component={NotFoundPage} />
       </Switch>
       {
       /* <body
