@@ -1,7 +1,7 @@
 import React from 'react'
 import "./table.scss";
 
-const Table = ({values, columns}) => {
+const Table = ({values, columns, onRowSelected=() => {}}) => {
   return (
     <table className="table-component">
       <thead>
@@ -15,9 +15,11 @@ const Table = ({values, columns}) => {
       </thead>
       <tbody>
         {
-          values.map(value => {
+          values.map((value, row) => {
             return (
-              <tr key={value.id}>
+              <tr key={value.id || row}
+                onClick={() => onRowSelected(row)}
+              >
               {
                 columns.map((col, idx) => {
                 return <td key={idx}>{value[col.property]}</td>

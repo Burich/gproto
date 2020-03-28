@@ -1,45 +1,72 @@
 import React, { Component } from 'react'
 
 import { compose } from "redux";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 import { withGpApiService, withLoadingStatus, withErrorStatus } from "../../hoc";
-// import { fetchMeasureUnits } from "../../actions/measure-units";
+import { fetchStructuralElements } from "../../actions/structural-elements";
 
 import Table from "../table";
 
 class StructuralElementsTableContainer extends Component {
   componentDidMount() {
-    // this.props.fetchMeasureUnits();
+    this.props.fetchStructuralElements();
   }
 
   render() {
-    return <Table 
-      values={[]/*this.props.values*/}
-      columns={[
-        {label: 'ID', property: 'elemId'},
-        {label: 'Наименование элемента', property: 'name'},
-        {label: 'Класс', property: 'class'},
-      ]}
-    />
+    const {values, selected, onRowSelected} = this.props;
+
+    let properties = [];
+
+    if (selected !== null) {
+      properties = values[selected].properties
+      .map(({name, measureUnit, value}) => {return {
+        name: measureUnit ? `${name}, ${measureUnit}` : name,
+        value
+      }});
+    }
+
+    return (selected !== null) ? (
+      <React.Fragment>
+        <Table 
+          values={properties}
+          columns={[
+            {label: 'Признак', property: 'name'},
+            {label: 'Значение', property: 'value'},
+          ]}
+        />
+      </React.Fragment>
+      ) : (
+      <React.Fragment>
+        <Table 
+          values={values}
+          columns={[
+            {label: 'ID', property: 'elemId'},
+            {label: 'Наименование элемента', property: 'name'},
+            {label: 'Класс', property: 'class'},
+          ]}
+          onRowSelected={onRowSelected}
+        />
+      </React.Fragment>
+      )
   }
 }
 
-// const mapStateToProps = ({measureUnits}) => {
-//   return {
-//     ...measureUnits
-//   }
-// }
+const mapStateToProps = ({structuralElements}) => {
+  return {
+    ...structuralElements
+  }
+}
 
-// const mapDispatchToProps = (dispatch, {gpApiService}) => {
-//   return {
-//     fetchMeasureUnits: fetchMeasureUnits(gpApiService, dispatch)
-//   }
-// }
+const mapDispatchToProps = (dispatch, {gpApiService}) => {
+  return {
+    fetchStructuralElements: fetchStructuralElements(gpApiService, dispatch)
+  }
+}
 
 export default compose(
   withGpApiService(),
-  // connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   withLoadingStatus(),
   withErrorStatus()
 )(StructuralElementsTableContainer);
