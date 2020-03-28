@@ -39,7 +39,6 @@ class TypesOfJobsTreeContainer extends Component {
   render() {
     const sections = this.props.values;
     const {openedSections} = this.state;
-    console.log('openedSections: ', openedSections);
 
     return (
       <div className="types-of-jobs-tree">
