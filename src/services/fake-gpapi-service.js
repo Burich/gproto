@@ -10,6 +10,30 @@ export default class FakeGpApiService extends FetchService {
         })
     }
 
+    getStructuralElements = () => {
+        return this.replyWithDelay([
+            {"id": 1, "elemId": "123", "name": "Труба стальная D57", "class": "Трубы", "properties": [
+                {"name": "Диаметр", "measureUnit": "", "value": "57"},
+                {"name": "Материал", "value": "Сталь"},
+                {"name": "Длина", "measureUnit": "м", "value": "11"},
+                {"name": "Уровень", "measureUnit": "мм", "value": "2061"}
+            ]},
+            {"id": 2, "elemId": "234", "name": "Труба стальная D57", "class": "Трубы", "properties": [
+                {"name": "Диаметр", "measureUnit": "", "value": "57"},
+                {"name": "Материал", "value": "Сталь"},
+                {"name": "Длина", "measureUnit": "м", "value": "12"},
+                {"name": "Уровень", "measureUnit": "мм", "value": "2062"}
+            ]},
+            {"id": 3, "elemId": "555", "name": "Швеллер_с_уклоном_внутренних_граней_полок_(У)_ГОСТ_8240-97.МД.2001320.УР.v03", 
+                "class": "Швеллера", "properties": [
+                {"name": "Диаметр", "measureUnit": "", "value": "53"},
+                {"name": "Материал", "value": "Сталь"},
+                {"name": "Длина", "measureUnit": "м", "value": "13"},
+                {"name": "Уровень", "measureUnit": "мм", "value": "2063"}
+            ]}
+        ]);
+    }
+
     getMeasureUnits = () => {
         return this.replyWithDelay([
             {"id": 1, "unit": "100 м3", "base": "м3", "factor": 0.01},

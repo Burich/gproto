@@ -9,4 +9,8 @@ export default class GpApiService extends FetchService {
     getDesignBrands = () => {
         return this.getResource('design-brands');
     }
+
+    getStructuralElements = () => {
+        return this.getResource('structural-elements');
+    }
 }

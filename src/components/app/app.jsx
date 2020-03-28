@@ -3,7 +3,8 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 
 import { MainPage, NotFoundPage, 
-  MeasureUnitsPage, DesignBrandsPage } from "../pages";
+  MeasureUnitsPage, DesignBrandsPage,
+  StructuralElementsPage } from "../pages";
 
 // import '@gpn-design/uikit/dist/style.css';
 // import { Button } from '@gpn-design/uikit';
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/' exact component={MainPage} />
         <Route path='/measure-units/' component={MeasureUnitsPage} />
         <Route path='/design-brands/' component={DesignBrandsPage} />
+        <Route path='/structural-elements/' component={StructuralElementsPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
       {
