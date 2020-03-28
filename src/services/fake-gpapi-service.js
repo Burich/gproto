@@ -10,6 +10,26 @@ export default class FakeGpApiService extends FetchService {
         })
     }
 
+    getTypesOfJobs = () => {
+        return this.replyWithDelay([
+            {"id": 1, "section": "Раздел Земляные работы", "types": [
+                {"id": 1, "name": "Разработка котлована", "measureUnit": "м3"},
+                {"id": 2, "name": "Рытье траншеи", "measureUnit": "м3"},
+                {"id": 3, "name": "Обратная засыпка", "measureUnit": "м3"},
+                {"id": 4, "name": "Обвалование", "measureUnit": "м3"}
+            ]},
+            {"id": 2, "section": "Раздел Свайные работы", "types": [
+                {"id": 5, "name": "Погружение свай", "measureUnit": "шт"},
+                {"id": 6, "name": "Устройство буронабивных свай", "measureUnit": "шт"}
+            ]},
+            {"id": 3, "section": "Раздел Конструкции металлические", "types": [
+                {"id": 7, "name": "Монтаж оголовников свай", "measureUnit": "шт"},
+                {"id": 8, "name": "Монтаж префабрикованных КМ (укрупненные конструкции, например, фермы)", "measureUnit": "тн"},
+                {"id": 9, "name": "Монтаж сборных резервуаров", "measureUnit": "тн"}
+            ]}
+        ]);
+    }
+
     getStructuralElements = () => {
         return this.replyWithDelay([
             {"id": 1, "elemId": "123", "name": "Труба стальная D57", "class": "Трубы", "properties": [
