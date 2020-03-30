@@ -7,7 +7,7 @@ import './hoc.scss'
 const withLoadingStatus = () => (Wrapped) => {
   return (props) => {
     return (
-      <div className="status-wrapper">
+      <div className={props.loading ? "status-wrapper" : null}>
         <Wrapped {...props} />
         {props.loading ? <LoadingStatus /> : null}
       </div>

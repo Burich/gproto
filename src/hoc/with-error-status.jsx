@@ -7,7 +7,7 @@ import './hoc.scss'
 const withErrorStatus = () => (Wrapped) => {
   return (props) => {
     return (
-      <div className="status-wrapper">
+      <div className={props.error ? "status-wrapper" : null}>
         <Wrapped {...props} />
         {props.error ? <ErrorStatus error={props.error} /> : null}
       </div>
