@@ -1,7 +1,7 @@
 import React from 'react'
 import "./table.scss";
 
-const Table = ({values, columns, onRowSelected=() => {}}) => {
+const Table = ({values=[], columns, onRowSelected=() => {}}) => {
   return (
     <table className="table-component">
       <thead>
