@@ -1,35 +1,18 @@
-const structuralElementsLoaded = (elements) => {
-    return {
-        type: 'FETCH_STRUCTURAL_ELEMENTS_SUCCESS',
-        payload: elements
-    }
-};
+import actionFactory from './actionFactory';
 
-const structuralElementsRequested = () => {
-    return {
-        type: 'FETCH_STRUCTURAL_ELEMENTS_REQUEST'
-    }
-};
+export const FETCH_STRUCTURAL_ELEMENTS_SUCCESS = 'FETCH_STRUCTURAL_ELEMENTS_SUCCESS';
+export const structuralElementsLoaded = actionFactory(FETCH_STRUCTURAL_ELEMENTS_SUCCESS);
 
-const structuralElementsError = (error) => {
-    return {
-        type: 'FETCH_STRUCTURAL_ELEMENTS_FAILURE',
-        payload: error
-    }
-}
+export const FETCH_STRUCTURAL_ELEMENTS_REQUEST = 'FETCH_STRUCTURAL_ELEMENTS_REQUEST';
+export const structuralElementsRequested = actionFactory(FETCH_STRUCTURAL_ELEMENTS_REQUEST);
 
-const fetchStructuralElements = (gpApiService, dispatch) => () => {
+export const FETCH_STRUCTURAL_ELEMENTS_FAILURE = 'FETCH_STRUCTURAL_ELEMENTS_FAILURE';
+export const structuralElementsError = actionFactory(FETCH_STRUCTURAL_ELEMENTS_FAILURE);
+
+export const fetchStructuralElements = (gpApiService, dispatch) => () => {
     dispatch(structuralElementsRequested());
     
     gpApiService.getStructuralElements()
     .then(data => dispatch(structuralElementsLoaded(data)))
     .catch(err => dispatch(structuralElementsError(err)));
-}
-
-export {
-    structuralElementsRequested,
-    structuralElementsLoaded,
-    structuralElementsError,
-
-    fetchStructuralElements
 }

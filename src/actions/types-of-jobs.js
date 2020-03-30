@@ -1,35 +1,18 @@
-const typesOfJobsLoaded = (sections) => {
-    return {
-        type: 'FETCH_TYPES_OF_JOBS_SUCCESS',
-        payload: sections
-    }
-};
+import actionFactory from './actionFactory';
 
-const typesOfJobsRequested = () => {
-    return {
-        type: 'FETCH_TYPES_OF_JOBS_REQUEST'
-    }
-};
+export const FETCH_TYPES_OF_JOBS_SUCCESS = 'FETCH_TYPES_OF_JOBS_SUCCESS';
+export const typesOfJobsLoaded = actionFactory(FETCH_TYPES_OF_JOBS_SUCCESS);
 
-const typesOfJobsError = (error) => {
-    return {
-        type: 'FETCH_TYPES_OF_JOBS_FAILURE',
-        payload: error
-    }
-}
+export const FETCH_TYPES_OF_JOBS_REQUEST = 'FETCH_TYPES_OF_JOBS_REQUEST';
+export const typesOfJobsRequested = actionFactory(FETCH_TYPES_OF_JOBS_REQUEST);
 
-const fetchTypesOfJobs = (gpApiService, dispatch) => () => {
+export const FETCH_TYPES_OF_JOBS_FAILURE = 'FETCH_TYPES_OF_JOBS_FAILURE';
+export const typesOfJobsError = actionFactory(FETCH_TYPES_OF_JOBS_FAILURE);
+
+export const fetchTypesOfJobs = (gpApiService, dispatch) => () => {
     dispatch(typesOfJobsRequested());
     
     gpApiService.getTypesOfJobs()
     .then(data => dispatch(typesOfJobsLoaded(data)))
     .catch(err => dispatch(typesOfJobsError(err)));
-}
-
-export {
-    typesOfJobsRequested,
-    typesOfJobsLoaded,
-    typesOfJobsError,
-
-    fetchTypesOfJobs
 }

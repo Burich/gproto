@@ -1,3 +1,6 @@
+import { FETCH_DESIGN_BRANDS_FAILURE, FETCH_DESIGN_BRANDS_REQUEST, 
+    FETCH_DESIGN_BRANDS_SUCCESS } from '../actions/design-brands';
+
 const updateDesignBrandsList = (state, action) => {
     if (state === undefined) {
         return {
@@ -8,19 +11,19 @@ const updateDesignBrandsList = (state, action) => {
     }
 
     switch (action.type) {
-        case 'FETCH_DESIGN_BRANDS_SUCCESS':
+        case FETCH_DESIGN_BRANDS_SUCCESS:
             return {
                 values: action.payload,
                 loading: false,
                 error: null
             };
-        case 'FETCH_DESIGN_BRANDS_REQUEST':
+        case FETCH_DESIGN_BRANDS_REQUEST:
             return {
                 values: [],
                 loading: true,
                 error: null
             }
-        case 'FETCH_DESIGN_BRANDS_FAILURE':
+        case FETCH_DESIGN_BRANDS_FAILURE:
             return {
                 values: [],
                 loading: false,

@@ -1,35 +1,18 @@
-const designBrandsLoaded = (brands) => {
-    return {
-        type: 'FETCH_DESIGN_BRANDS_SUCCESS',
-        payload: brands
-    }
-};
+import actionFactory from './actionFactory';
 
-const designBrandsRequested = () => {
-    return {
-        type: 'FETCH_DESIGN_BRANDS_REQUEST'
-    }
-};
+export const FETCH_DESIGN_BRANDS_SUCCESS = 'FETCH_DESIGN_BRANDS_SUCCESS';
+export const designBrandsLoaded = actionFactory(FETCH_DESIGN_BRANDS_SUCCESS);
 
-const designBrandsError = (error) => {
-    return {
-        type: 'FETCH_DESIGN_BRANDS_FAILURE',
-        payload: error
-    }
-}
+export const FETCH_DESIGN_BRANDS_REQUEST = 'FETCH_DESIGN_BRANDS_REQUEST';
+export const designBrandsRequested = actionFactory(FETCH_DESIGN_BRANDS_REQUEST);
 
-const fetchDesignBrands = (gpApiService, dispatch) => () => {
+export const FETCH_DESIGN_BRANDS_FAILURE = 'FETCH_DESIGN_BRANDS_FAILURE';
+export const designBrandsError = actionFactory(FETCH_DESIGN_BRANDS_FAILURE);
+
+export const fetchDesignBrands = (gpApiService, dispatch) => () => {
     dispatch(designBrandsRequested());
     
     gpApiService.getDesignBrands()
     .then(data => dispatch(designBrandsLoaded(data)))
     .catch(err => dispatch(designBrandsError(err)));
-}
-
-export {
-    designBrandsRequested,
-    designBrandsLoaded,
-    designBrandsError,
-
-    fetchDesignBrands
 }

@@ -1,3 +1,6 @@
+import { FETCH_TYPES_OF_JOBS_FAILURE, FETCH_TYPES_OF_JOBS_REQUEST, 
+    FETCH_TYPES_OF_JOBS_SUCCESS } from "../actions/types-of-jobs";
+
 const updateTypesOfJobsList = (state, action) => {
     if (state === undefined) {
         return {
@@ -8,19 +11,19 @@ const updateTypesOfJobsList = (state, action) => {
     }
 
     switch (action.type) {
-        case 'FETCH_TYPES_OF_JOBS_SUCCESS':
+        case FETCH_TYPES_OF_JOBS_SUCCESS:
             return {
                 values: action.payload,
                 loading: false,
                 error: null
             };
-        case 'FETCH_TYPES_OF_JOBS_REQUEST':
+        case FETCH_TYPES_OF_JOBS_REQUEST:
             return {
                 values: [],
                 loading: true,
                 error: null
             }
-        case 'FETCH_TYPES_OF_JOBS_FAILURE':
+        case FETCH_TYPES_OF_JOBS_FAILURE:
             return {
                 values: [],
                 loading: false,

@@ -1,3 +1,6 @@
+import { FETCH_MEASURE_UNITS_FAILURE, FETCH_MEASURE_UNITS_REQUEST, 
+    FETCH_MEASURE_UNITS_SUCCESS } from "../actions/measure-units";
+
 const updateMeasureUnitsList = (state, action) => {
     if (state === undefined) {
         return {
@@ -8,19 +11,19 @@ const updateMeasureUnitsList = (state, action) => {
     }
 
     switch (action.type) {
-        case 'FETCH_MEASURE_UNITS_SUCCESS':
+        case FETCH_MEASURE_UNITS_SUCCESS:
             return {
                 values: action.payload,
                 loading: false,
                 error: null
             };
-        case 'FETCH_MEASURE_UNITS_REQUEST':
+        case FETCH_MEASURE_UNITS_REQUEST:
             return {
                 values: [],
                 loading: true,
                 error: null
             }
-        case 'FETCH_MEASURE_UNITS_FAILURE':
+        case FETCH_MEASURE_UNITS_FAILURE:
             return {
                 values: [],
                 loading: false,
