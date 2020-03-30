@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 
 import { MainPage, NotFoundPage, 
   MeasureUnitsPage, DesignBrandsPage,
-  StructuralElementsPage, TypesOfJobsPage } from "../pages";
+  StructuralElementsPage, TypesOfJobsPage,
+ReferencesAndRatesPage } from "../pages";
 
 // import '@gpn-design/uikit/dist/style.css';
 // import { Button } from '@gpn-design/uikit';
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/design-brands/' component={DesignBrandsPage} />
         <Route path='/structural-elements/' component={StructuralElementsPage} />
         <Route path='/types-of-jobs/' component={TypesOfJobsPage} />
+        <Route path='/references-and-rates/' component={ReferencesAndRatesPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
       {

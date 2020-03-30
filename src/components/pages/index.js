@@ -4,6 +4,7 @@ import MeasureUnitsPage from './measure-units-page';
 import DesignBrandsPage from './design-brands-page.jsx';
 import StructuralElementsPage from './structural-elements-page.jsx';
 import TypesOfJobsPage from './types-of-jobs-page.jsx';
+import ReferencesAndRatesPage from './references-and-rates-page.jsx';
 
 export  {
     MainPage,
@@ -11,5 +12,6 @@ export  {
     MeasureUnitsPage,
     DesignBrandsPage,
     StructuralElementsPage,
-    TypesOfJobsPage
+    TypesOfJobsPage,
+    ReferencesAndRatesPage
 };

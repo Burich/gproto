@@ -15,7 +15,9 @@ const LoadingScreen = ({loadings}) => {
 const mapStateToProps = (state) => {
   return {loadings: [
     state.measureUnits.loading,
-    state.designBrands.loading
+    state.designBrands.loading,        
+    state.structuralElements.loading,
+    state.typesOfJobs.loading,
   ]}
 };
 

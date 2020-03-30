@@ -10,6 +10,14 @@ export default class GpApiService extends FetchService {
         return this.getResource('measure-units');
     }
 
+    getReferencesAndRates = () => {
+        return this.getResource('references-and-rates');
+    }
+
+    getFotAndMachineryFor = (id) => {
+        return this.getResource(`fot-and-machinery/${id}`);
+    }
+
     getDesignBrands = () => {
         return this.getResource('design-brands');
     }
