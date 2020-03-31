@@ -9,12 +9,13 @@ import App from './components/app';
 // import LoadingScreen from './components/loading-screen';
 import { GpApiServiceProvider } from "./components/gpapi-service-context";
 import GpApiService from "./services/gpapi-service";
-// import FakeGpApiService from "./services/fake-gpapi-service";
+import FakeGpApiService from "./services/fake-gpapi-service";
 
 import store from "./store";
 
-// const gpApiService = new FakeGpApiService();
-const gpApiService = new GpApiService();
+import { config } from "./constants";
+
+const gpApiService = config.isDev ? new GpApiService() : new FakeGpApiService();
 
 ReactDOM.render(
   <React.StrictMode>

@@ -7,19 +7,23 @@ import { MainPage, NotFoundPage,
   StructuralElementsPage, TypesOfJobsPage,
 ReferencesAndRatesPage } from "../pages";
 
+import { config } from "../../constants";
+
 // import '@gpn-design/uikit/dist/style.css';
 // import { Button } from '@gpn-design/uikit';
 
 const App = () => {
+  const {link} = config;
+
   return (
     <div className="app">
       <Switch>
-        <Route path='/' exact component={MainPage} />
-        <Route path='/measure-units/' component={MeasureUnitsPage} />
-        <Route path='/design-brands/' component={DesignBrandsPage} />
-        <Route path='/structural-elements/' component={StructuralElementsPage} />
-        <Route path='/types-of-jobs/' component={TypesOfJobsPage} />
-        <Route path='/references-and-rates/' component={ReferencesAndRatesPage} />
+        <Route path={link('/')} exact component={MainPage} />
+        <Route path={link('/measure-units/')} component={MeasureUnitsPage} />
+        <Route path={link('/design-brands/')} component={DesignBrandsPage} />
+        <Route path={link('/structural-elements/')} component={StructuralElementsPage} />
+        <Route path={link('/types-of-jobs/')} component={TypesOfJobsPage} />
+        <Route path={link('/references-and-rates/')} component={ReferencesAndRatesPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
       {

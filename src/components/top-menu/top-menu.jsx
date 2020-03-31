@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 
 import { Link } from "react-router-dom";
 
+import { config } from "../../constants";
+
 import './top-menu.scss'
 
 const menuTree = [
@@ -35,12 +37,14 @@ class TopMenu extends Component {
   }
 
   createSubmenu = (submenu) => {
+    const {link} = config;
+
     return (
     <div className="sub-menu">
     {
       submenu.map(({label, to}, sub_idx) => {
         return (
-          <Link to={to} key={sub_idx}>
+          <Link to={link(to)} key={sub_idx}>
             <div className="sub-menu-item">
               {label}
             </div>
@@ -53,6 +57,7 @@ class TopMenu extends Component {
   }
 
   render() {
+    const {link} = config;
     // console.log(this.state.hoveredIdx);
     return (
       <div className="top-menu">
@@ -62,7 +67,7 @@ class TopMenu extends Component {
               return (to) 
               ? (
                 <Link 
-                  to={to} 
+                  to={link(to)} 
                   key={idx}
                   className="menu-item"
                 >
