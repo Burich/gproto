@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gproto/static/css/main.cc23bdbf.chunk.css",
+    "main.js": "/gproto/static/js/main.fc14da2d.chunk.js",
+    "main.js.map": "/gproto/static/js/main.fc14da2d.chunk.js.map",
+    "runtime-main.js": "/gproto/static/js/runtime-main.f18dd4b9.js",
+    "runtime-main.js.map": "/gproto/static/js/runtime-main.f18dd4b9.js.map",
+    "static/js/2.be3945f2.chunk.js": "/gproto/static/js/2.be3945f2.chunk.js",
+    "static/js/2.be3945f2.chunk.js.map": "/gproto/static/js/2.be3945f2.chunk.js.map",
+    "index.html": "/gproto/index.html",
+    "precache-manifest.a64df5f0e1fb4fb701b94f34693b47d3.js": "/gproto/precache-manifest.a64df5f0e1fb4fb701b94f34693b47d3.js",
+    "service-worker.js": "/gproto/service-worker.js",
+    "static/css/main.cc23bdbf.chunk.css.map": "/gproto/static/css/main.cc23bdbf.chunk.css.map",
+    "static/js/2.be3945f2.chunk.js.LICENSE.txt": "/gproto/static/js/2.be3945f2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f18dd4b9.js",
+    "static/js/2.be3945f2.chunk.js",
+    "static/css/main.cc23bdbf.chunk.css",
+    "static/js/main.fc14da2d.chunk.js"
+  ]
+}
