@@ -8,13 +8,13 @@ import { Provider } from "react-redux";
 import App from './components/app';
 // import LoadingScreen from './components/loading-screen';
 import { GpApiServiceProvider } from "./components/gpapi-service-context";
-import GpApiService from "./services/gpapi-service";
-// import FakeGpApiService from "./services/fake-gpapi-service";
+// import GpApiService from "./services/gpapi-service";
+import FakeGpApiService from "./services/fake-gpapi-service";
 
 import store from "./store";
 
-// const gpApiService = new FakeGpApiService();
-const gpApiService = new GpApiService();
+const gpApiService = new FakeGpApiService();
+// const gpApiService = new GpApiService();
 
 ReactDOM.render(
   <React.StrictMode>
